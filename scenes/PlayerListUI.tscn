@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bibc27esbaqtt"]
+
+[ext_resource type="Script" uid="uid://bieb1nkco2rh" path="res://scripts/player_list_ui.gd" id="1_w45qs"]
+
+[node name="PlayerListUi" type="CanvasLayer" unique_id=2099084803]
+script = ExtResource("1_w45qs")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1611137953]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Margin" type="MarginContainer" parent="Panel" unique_id=1543486032]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin" unique_id=1282012134]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox" unique_id=181271453]
+layout_mode = 2
+text = "Игроки:"
+
+[node name="Entries" type="VBoxContainer" parent="Panel/Margin/VBox" unique_id=1242289665]
+layout_mode = 2

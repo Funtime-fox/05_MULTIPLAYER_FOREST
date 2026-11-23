@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dwttrafeydkvj"]
+
+[ext_resource type="Script" uid="uid://dfcekxpch5edb" path="res://scripts/chat_ui.gd" id="1_y3tht"]
+[ext_resource type="FontFile" uid="uid://lsgihh8w4j00" path="res://assets/ComicoroRu_0.ttf" id="2_4gsi8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gsi8"]
+bg_color = Color(0, 0, 0, 0.6)
+
+[node name="ChatUi" type="CanvasLayer" unique_id=1807999771]
+script = ExtResource("1_y3tht")
+
+[node name="Root" type="MarginContainer" parent="." unique_id=732883910]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root" unique_id=1850723058]
+layout_mode = 2
+
+[node name="Log" type="RichTextLabel" parent="Root/VBox" unique_id=765721765]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gsi8")
+
+[node name="InputRow" type="HBoxContainer" parent="Root/VBox" unique_id=1500372408]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="MsgInput" type="LineEdit" parent="Root/VBox/InputRow" unique_id=238212543]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4gsi8")
+theme_override_font_sizes/font_size = 16
+expand_to_text_length = true
+
+[node name="SendBtn" type="Button" parent="Root/VBox/InputRow" unique_id=29394721]
+layout_mode = 2
+text = "→"
+
+[connection signal="text_submitted" from="Root/VBox/InputRow/MsgInput" to="." method="_on_msg_input_text_submitted"]
